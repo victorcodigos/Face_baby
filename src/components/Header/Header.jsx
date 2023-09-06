@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Avatar } from "antd";
+import "./Header.scss"
+import {HomeOutlined, LogoutOutlined, LoginOutlined } from "@ant-design/icons"
 
 const Header = () => {
   const { user } = useSelector((state) => state.auth);
@@ -19,14 +21,16 @@ const Header = () => {
 
   const dispatch = useDispatch();
   return (
-    <div>
-      <Link to="/">Home </Link>
-      
+    <div className="header">
+      <Link to="/"><HomeOutlined />Home </Link>
+      <div className="search-input">
       <input onKeyUp={handleChange} placeholder="search post" name="text" />
+      </div>
 
       {user ? (
         <>
-          <Link to="/profile">
+        <div className="nav-links">
+          <Link to="/profile" className="avatar">
             <Avatar
               style={{
                 backgroundColor: "blue",
@@ -37,12 +41,15 @@ const Header = () => {
               {user.username[0]}
             </Avatar>
           </Link>
-          <button onClick={() => dispatch(logout())}>Logout</button>
+          <button className="logout-button" onClick={() => dispatch(logout())}><LogoutOutlined />Logout</button>
+          </div>
         </>
       ) : (
         <>
-          <Link to="/login"> Login </Link>
+        <div className="nav-links">
+          <Link to="/login"><LoginOutlined /> Login </Link>
           <Link to="/register"> Register</Link>
+          </div>
         </>
       )}
     </div>

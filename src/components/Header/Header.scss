@@ -1,0 +1,88 @@
+@import "../../Colors.scss";
+
+.header {
+    background-color: $primary-color;
+    color: $primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+  }
+  
+  .nav {
+    list-style: none;    
+    display: flex;
+  
+    li {
+      margin-right: 20px;
+      font-size: 18px;
+      
+  
+      &:last-child {
+        margin-right: 0;
+      }
+  
+      a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+  
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+  
+  .search-input {
+    input {
+      padding: 5px;
+      
+      border-radius: 4px;
+      font-size: 16px;
+      margin-right: 10px;
+      width: 200px;
+      border-color: $secondary-color;
+  
+      &:focus {
+        outline: none;
+        border-color: $secondary-color;
+      }
+    }
+  }
+  
+  .avatar {
+    background-color: $secondary-color;
+    vertical-align: middle;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin-right: 10px;
+    overflow: hidden;
+  
+    &:hover {
+      background-color: darken(blue, 10%);
+    }
+  }
+  
+  .logout-button {
+    background: none;
+    border: none;
+    color: $secondary-color;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+  
+    &:hover {
+      color: $secondary-color;
+    }
+  }

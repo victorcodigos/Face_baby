@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-import React, { useEffect ,useState } from "react";
-import { register, reset } from "../../features/auth/authSlice";
-import { useDispatch, useSelector } from 'react-redux'
-=======
 import React, { useEffect, useState } from "react";
 import { register, reset } from "../../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
->>>>>>> df270e230fcb13c33e66b393457c63bf991c8dee
 import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 
@@ -20,13 +14,8 @@ const Register = () => {
 
   const { username, email, password, password2 } = formData;
   const { message, isSuccess, isError } = useSelector((state) => state.auth);
-<<<<<<< HEAD
-  const dispatch = useDispatch()
-  const navigate = useNavigate();
-=======
   const dispatch = useDispatch();
   const navigate = useNavigate()
->>>>>>> df270e230fcb13c33e66b393457c63bf991c8dee
 
   useEffect(() => {
     if (isSuccess) {
@@ -35,22 +24,14 @@ const Register = () => {
       });
       setTimeout(() => {
         navigate("/login");
-<<<<<<< HEAD
-      }, 2000);
-=======
       }, 1000);
->>>>>>> df270e230fcb13c33e66b393457c63bf991c8dee
     }
     if (isError) {
       notification.error({
         message: message,
       });
     }
-<<<<<<< HEAD
-    
-=======
     dispatch(reset());
->>>>>>> df270e230fcb13c33e66b393457c63bf991c8dee
   }, [message, isSuccess, isError]);
 
   const onChange = (e) => {

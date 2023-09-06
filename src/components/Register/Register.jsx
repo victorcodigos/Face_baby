@@ -1,19 +1,38 @@
-import React, { useState } from "react";
-import { register } from "../../features/auth/authSlice";
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useState } from "react";
+import { register, reset } from "../../features/auth/authSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { notification } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
-    password2: ""
+    password2: "",
   });
 
   const { username, email, password, password2 } = formData;
+  const { message, isSuccess, isError } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
 
-  const dispatch = useDispatch()
+  useEffect(() => {
+    if (isSuccess) {
+      notification.success({
+        message: message,
+      });
+      setTimeout(() => {
+        navigate("/login");
+      }, 1000);
+    }
+    if (isError) {
+      notification.error({
+        message: message,
+      });
+    }
+    dispatch(reset());
+  }, [message, isSuccess, isError]);
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -29,9 +48,8 @@ const Register = () => {
         description: "Passwords do not match",
       });
     } else {
-      return dispatch(register(formData));
+      dispatch(register(formData));
     }
-
   };
   return (
     <form onSubmit={onSubmit}>

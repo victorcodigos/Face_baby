@@ -42,7 +42,6 @@ const Login = () => {
         e.preventDefault();
         dispatch(login(formData));
     };
-
     return (
         <form onSubmit={onSubmit}>
             <input type="email" name="email" value={email} onChange={onChange} />

@@ -2,33 +2,53 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import postsService from "./postsService";
 
 const initialState = {
-
-    posts: []
-
+  posts: [],
+  isLoading: false,
+  post: {},
 };
 
 export const getAll = createAsyncThunk("posts/getAll", async () => {
+  try {
+    return await postsService.getAll();
+  } catch (error) {
+    console.error(error);
+  }
+});
 
-    try {
-        return await postsService.getAll();
-    } catch (error) {
-        console.error(error);
-    }
-
+export const getById = createAsyncThunk("posts/getById", async (_id) => {
+  try {
+    return await postsService.getById(_id);
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 export const postsSlice = createSlice({
+  name: "posts",
 
-    name: "posts",
-    initialState,
-    reducers: {},
+  initialState,
 
-    extraReducers: (builder) => {
-        builder
-            .addCase(getAll.fulfilled, (state, action) => {
-                state.posts = action.payload;
-            })
+  reducers: {
+    reset: (state) => {
+      state.isLoading = false;
     },
+  },
+
+  extraReducers: (builder) => {
+    builder.addCase(getAll.fulfilled, (state, action) => {
+      state.posts = action.payload;
+    });
+
+    builder.addCase(getAll.pending, (state) => {
+      state.isLoading = true;
+    });
+
+    builder.addCase(getById.fulfilled, (state,action) => {
+        state.post = action.payload
+    })
+  },
 });
+
+export const { reset } = postsSlice.actions;
 
 export default postsSlice.reducer;

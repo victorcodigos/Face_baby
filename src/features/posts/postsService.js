@@ -1,17 +1,22 @@
 import axios from "axios";
 
 const API_URL = "http://localhost:3000";
+
 const getAll = async () => {
+  const res = await axios.get(API_URL + "/posts/getall");
 
-    const res = await axios.get(API_URL + "/posts");
-    return res.data;
+  return res.data;
+};
 
+const getById = async (_id) => {
+  const res = await axios.get(API_URL + "/posts/id/" + _id);
+
+  return res.data;
 };
 
 const postsService = {
-
-    getAll
-
+  getAll,
+  getById
 };
 
 export default postsService;

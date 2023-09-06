@@ -11,7 +11,6 @@ const Profile = () => {
   }
   return (
     <div>
-       
       <p>{user.username}</p>
       <p>{user.email}</p>
     </div>

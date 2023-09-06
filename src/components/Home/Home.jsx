@@ -1,11 +1,13 @@
-const Home = () => {
+import React from "react";
+import Posts from "../Posts/Posts";
 
-    return (
-    
-    <div>Home</div>
-    
-    )
-    
-    }
-    
-    export default Home
+const Home = () => {
+  return (
+    <div>
+      Home
+      <Posts />
+    </div>
+  );
+};
+
+export default Home;

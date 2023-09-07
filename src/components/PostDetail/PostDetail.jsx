@@ -7,9 +7,7 @@ import { Spin } from "antd";
 
 const PostDetail = () => {
   const { _id } = useParams();
-
   const dispatch = useDispatch();
-
   const { post } = useSelector((state) => state.posts);
 
   useEffect(() => {
@@ -20,9 +18,8 @@ const PostDetail = () => {
     return <Spin/>
   }
   return (
-    <div>
+    <div style={{minHeight:"60vh"}}> 
       <h1>PostDetail</h1>
-
       <p>{post.title}</p>
       <p>{post.body}</p>
       <img src={post.image} alt="post image" />

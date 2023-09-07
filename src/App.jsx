@@ -10,7 +10,7 @@ import PostDetail from "./components/PostDetail/PostDetail";
 import Footer from "./components/Footer/Footer";
 import Search from "./components/Search/Search";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
-
+import PrivateZone from "./guards/PrivateZone";
 function App() {
 
   return (
@@ -22,7 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<PrivateZone><Profile /></PrivateZone>} />
           <Route path="/post/:_id" element={<PostDetail />} /> 
           <Route path="/search/:title" element={<Search />} />
           <Route path="/*" element={<PageNotFound />} />         

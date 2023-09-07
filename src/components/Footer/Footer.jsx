@@ -18,11 +18,10 @@ const Footer = () => {
                         <li className="list-inline-item"><a href="">About</a></li>
                         <li className="list-inline-item"><a href="">Contact</a></li>
                     </ul>
-                    <p className="copyright"> Created by Adrian Pastor and Victor Macedo. Copyright © 2023 . All rights reserved.</p> 
+                    <p className="copyright"> Created by Adrian Pastor and Victor Macedo. Copyright © 2023 . All rights reserved.</p>
                 </footer>
             </div>
         </div>
     )
 }
-
 export default Footer

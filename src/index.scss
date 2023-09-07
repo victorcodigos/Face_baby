@@ -1,8 +1,10 @@
 @import "Colors.scss";
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  
   font-weight: 400;
   height: 100vh;
+
   color: $secondary-color;
   background-color: $primary-color;
   font-synthesis: none;

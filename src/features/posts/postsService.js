@@ -15,15 +15,26 @@ const getById = async (_id) => {
 };
 
 const getPostByName = async (postTitle) => {
-    const res = await axios.get(API_URL + "/posts/title/" + postTitle);
-    return res.data;
-  };
-  
+  const res = await axios.get(API_URL + "/posts/title/" + postTitle);
+  return res.data;
+};
+
+const deletePost = async (id) => {
+  const token = JSON.parse(localStorage.getItem("token"));
+  const res = await axios.delete(API_URL + "/posts/delete/" + id, {
+    headers: {
+      authorization: token,
+    },
+  });
+
+  return res.data;
+};
 
 const postsService = {
   getAll,
   getById,
-  getPostByName
+  getPostByName,
+  deletePost
 };
 
 export default postsService;

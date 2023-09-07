@@ -10,11 +10,10 @@ import PostDetail from "./components/PostDetail/PostDetail";
 import Footer from "./components/Footer/Footer";
 import Search from "./components/Search/Search";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
-import PrivateZone from "./guards/PrivateZone";
+import PrivateZone from "./components/Guards/PrivateZone/PrivateZone";
+
 function App() {
-
   return (
-
     <div className="App">
       <BrowserRouter>
         <Header />
@@ -22,12 +21,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<PrivateZone><Profile /></PrivateZone>} />
-          <Route path="/post/:_id" element={<PostDetail />} /> 
+          <Route path="/profile"  element={ <PrivateZone><Profile /> </PrivateZone> } />
+          <Route path="/post/:_id" element={<PostDetail />} />
           <Route path="/search/:title" element={<Search />} />
-          <Route path="/*" element={<PageNotFound />} />         
+          <Route path="/*" element={<PageNotFound />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </div>
   );

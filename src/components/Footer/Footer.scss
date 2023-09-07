@@ -1,9 +1,15 @@
 @import "../../Colors.scss";
 
+
+
+.FooterContainer{
+    height: 20vh;
+}
 .footerBasic {
     padding: 1.5em;
     color: $secondary-color;
     background-color: $primary-color;
+    
     
     ul {
         display: flex;

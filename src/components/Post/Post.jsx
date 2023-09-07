@@ -18,7 +18,7 @@ console.log(user)
           <p>{post.title}</p>
           </Link>
           {
-post.userId?._id === user?._id ?   <button onClick={() => dispatch(deletePost(post._id))}>X</button>:null
+            post.userId?._id === user?._id ?   <button onClick={() => dispatch(deletePost(post._id))}>X</button>:null
           }
         
        

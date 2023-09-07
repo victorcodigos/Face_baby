@@ -3,7 +3,7 @@ import Posts from "../Posts/Posts";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{height:"50vh"}}>
       Home
       <Posts />
     </div>

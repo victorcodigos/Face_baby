@@ -14,8 +14,10 @@
   .nav {
     list-style: none;    
     display: flex;
+    
   
     li {
+        
       margin-right: 20px;
       font-size: 18px;
       
@@ -48,7 +50,7 @@
   
       &:focus {
         outline: none;
-        border-color: $secondary-color;
+        border-color: $hover-color;
       }
     }
   }
@@ -68,7 +70,7 @@
     overflow: hidden;
   
     &:hover {
-      background-color: darken(blue, 10%);
+      background-color: darken($hover-color, 10%);
     }
   }
   

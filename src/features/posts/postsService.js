@@ -26,15 +26,34 @@ const deletePost = async (id) => {
       authorization: token,
     },
   });
-
   return res.data;
 };
+
+const likePost = async (_id) => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    
+    const res = await axios.put(API_URL + "/posts/like/"+_id,{}, {
+        headers: {
+          authorization: token,
+        },
+      } );
+    return res.data;
+  };
+
+  
+
+  
+
+  
 
 const postsService = {
   getAll,
   getById,
   getPostByName,
-  deletePost
+  deletePost,
+  likePost,
+  
+  
 };
 
 export default postsService;

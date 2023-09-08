@@ -5,6 +5,8 @@ const initialState = {
   posts: [],
   isLoading: false,
   post: {},
+  
+  
 };
 
 export const getAll = createAsyncThunk("posts/getAll", async () => {
@@ -42,6 +44,15 @@ export const deletePost = createAsyncThunk("posts/deletePost", async (id) => {
   }
 });
 
+export const likePost = createAsyncThunk("posts/like", async (_id) => {
+    try {
+      return await postsService.likePost(_id);
+    } catch (error) {
+      console.error(error);
+    }
+  });  
+  
+
 export const postsSlice = createSlice({
   name: "posts",
   initialState,
@@ -71,6 +82,12 @@ export const postsSlice = createSlice({
         (post) => post._id != action.payload.post._id
       );
     });
+    builder.addCase(likePost.fulfilled, (state, action) => {
+        
+      state.post = action.payload
+    });  
+
+      
   },
 });
 

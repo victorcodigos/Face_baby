@@ -3,26 +3,52 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getById } from "../../features/posts/postsSlice";
-import { Spin } from "antd";
+import { likePost } from "../../features/posts/postsSlice";
+import { dislikePost } from "../../features/posts/postsSlice";
+import { Spin, Card } from "antd";
+import {HeartFilled, HeartOutlined   } from "@ant-design/icons"
+import "./PostDetail.scss"
 
 const PostDetail = () => {
   const { _id } = useParams();
   const dispatch = useDispatch();
-  const { post } = useSelector((state) => state.posts);
 
+  const { post} = useSelector((state) => state.posts);
+const {user} =useSelector(state => state.auth)
   useEffect(() => {
     dispatch(getById(_id));
-  }, []);
+  }, []);  
+
+  
 
   if(!post){
     return <Spin/>
   }
+
+  const isAlreadyLiked = post.likes?.includes(user?._id); 
+  
+  const handleLikeDislike = () => {
+    if (isAlreadyLiked) {
+      dispatch(dislikePost(post._id));
+    } else {
+      dispatch(likePost(post._id));
+    }
+  };
+   
+ 
   return (
-    <div style={{minHeight:"60vh"}}> 
-      <h1>PostDetail</h1>
-      <p>{post.title}</p>
-      <p>{post.body}</p>
-      <img src={post.image} alt="post image" />
+    <div className="Detail">
+        
+        <Card title= {post.title} bordered={false} style={{ width: 300, objectFit: "cover"  }}>
+        <img src={post.image} alt="post image" style={{ width: 200, height: 200 }} />
+        <p>{post.body}</p>
+        <span className="likes"> {post.likes?.length}</span>
+       {isAlreadyLiked ? (
+          <HeartFilled onClick={handleLikeDislike} />
+        ) : (
+          <HeartOutlined onClick={handleLikeDislike} />
+        )}        
+        </Card>                          
     </div>
   );
 };

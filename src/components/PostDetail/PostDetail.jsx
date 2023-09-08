@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getById } from "../../features/posts/postsSlice";
 import { likePost } from "../../features/posts/postsSlice";
+import { dislikePost } from "../../features/posts/postsSlice";
 import { Spin, Card } from "antd";
 import {HeartFilled, HeartOutlined   } from "@ant-design/icons"
 import "./PostDetail.scss"
@@ -25,7 +26,16 @@ const {user} =useSelector(state => state.auth)
     return <Spin/>
   }
 
-  const isAlreadyLiked = post.likes?.includes(user?._id);  
+  const isAlreadyLiked = post.likes?.includes(user?._id); 
+  
+  const handleLikeDislike = () => {
+    if (isAlreadyLiked) {
+      dispatch(dislikePost(post._id));
+    } else {
+      dispatch(likePost(post._id));
+    }
+  };
+   
  
   return (
     <div className="Detail">
@@ -35,9 +45,9 @@ const {user} =useSelector(state => state.auth)
         <p>{post.body}</p>
         <span className="likes"> {post.likes?.length}</span>
        {isAlreadyLiked ? (
-          <HeartFilled  onClick={()=>  console.log("dislike")  } />
+          <HeartFilled onClick={handleLikeDislike} />
         ) : (
-          <HeartOutlined onClick={()=> dispatch(likePost(post._id))  } />
+          <HeartOutlined onClick={handleLikeDislike} />
         )}        
         </Card>                          
     </div>

@@ -40,6 +40,17 @@ const likePost = async (_id) => {
     return res.data;
   };
 
+  const dislikePost = async (_id) => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    
+    const res = await axios.put(API_URL + "/posts/dislike/"+_id,{}, {
+        headers: {
+          authorization: token,
+        },
+      } );
+    return res.data;
+  };
+
   
 
   
@@ -52,6 +63,7 @@ const postsService = {
   getPostByName,
   deletePost,
   likePost,
+  dislikePost
   
   
 };

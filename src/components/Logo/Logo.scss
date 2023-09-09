@@ -1,0 +1,14 @@
+.div-main {
+    display: flex;
+    min-height: 10%;
+
+    .logo {
+        max-width: 100%;
+        height: auto;
+
+        .img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}

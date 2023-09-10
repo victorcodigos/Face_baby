@@ -3,6 +3,7 @@ import { register, reset } from "../../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
+import "./Register.scss"
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -52,16 +53,17 @@ const Register = () => {
     }
   };
   return (
-    <form onSubmit={onSubmit}>
-      <input type="text" name="username" value={username} onChange={onChange} />
-      <input type="email" name="email" value={email} onChange={onChange} />
-      <input
+    <div className="div-main">
+    <form className="form" onSubmit={onSubmit}>
+      <input className="username-input" type="text" name="username" value={username} onChange={onChange} />
+      <input className="email-input" type="email" name="email" value={email} onChange={onChange} />
+      <input className="password-input"
         type="password"
         name="password"
         value={password}
         onChange={onChange}
       />
-      <input
+      <input className="repeat-password"
         type="password"
         name="password2"
         value={password2}
@@ -69,6 +71,7 @@ const Register = () => {
       />
       <button type="submit">Register</button>
     </form>
+    </div>
   );
 };
 

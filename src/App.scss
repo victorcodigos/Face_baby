@@ -9,12 +9,13 @@
 
 body {
   
-  height: 100%;
-  margin: 0;
+  height: 100vh; /* 100% da altura do viewport */
+  width: 100%; /* 100% do viewport */
 }
 
 .App {
 
   height: 100%;
   
-}
+} 
+

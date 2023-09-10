@@ -19,9 +19,9 @@ const Post = () => {
     return (
       <div className="Post-container" key={post._id}>
         <div className="Post">
-          <Card title={post.title} bordered={false} style={{ width: '30vh' }}>
+          <Card className="cards"title={post.title} bordered={false} style={{ width: '30vh' }}>
             <Link to={"/post/" + post._id}>
-              <img src={post.image} alt="post image" style={{ width: 50, height: 50 }} />
+              <img className="img"src={post.image} alt="post image" style={{ width: 50, height: 50 }} />
             </Link>
             {
               post.userId?._id === user?._id ? <span onClick={() => dispatch(deletePost(post._id))}><DeleteOutlined /></span> : null

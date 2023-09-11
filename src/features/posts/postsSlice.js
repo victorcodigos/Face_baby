@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import postsService from "./postsService";
+import Posts from "../../components/Posts/Posts";
 
 const initialState = {
   posts: [],
@@ -58,7 +59,18 @@ export const likePost = createAsyncThunk("posts/like", async (_id) => {
     } catch (error) {
       console.error(error);
     }
-  });  
+  }); 
+
+  export const createPost = createAsyncThunk("posts/create", async (formData) => {
+    try {
+      console.log(formData)
+      return await postsService.createPost(formData);
+      
+    } catch (error) {
+      console.error(error)
+    }
+  });
+ 
   
   
 
@@ -96,7 +108,11 @@ export const postsSlice = createSlice({
     });  
     builder.addCase(dislikePost.fulfilled, (state, action) => {        
         state.post = action.payload
+      });
+      builder.addCase(createPost.fulfilled, (state, action) => {        
+        state.post = action.payload
       });  
+    
   
 
       

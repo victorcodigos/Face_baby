@@ -36,12 +36,14 @@ const {user} =useSelector(state => state.auth)
     }
   };
    
- 
+  
+  
+  const image = post.image?.includes("https://") ? post.image :"http://localhost:3000/images/"+post.image
   return (
     <div className="Detail">
         
         <Card title= {post.title} bordered={false} style={{ width: 300, objectFit: "cover"  }}>
-        <img src={post.image} alt="post image" style={{ width: 200, height: 200 }} />
+        <img src={image} alt="post image" style={{ width: 200, height: 200 }} />
         <p>{post.body}</p>
         <span className="likes"> {post.likes?.length}</span>
        {isAlreadyLiked ? (

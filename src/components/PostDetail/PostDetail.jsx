@@ -7,12 +7,12 @@ import { likePost } from "../../features/posts/postsSlice";
 import { dislikePost } from "../../features/posts/postsSlice";
 import { Spin, Card } from "antd";
 import { HeartFilled, HeartOutlined } from "@ant-design/icons"
+
 import "./PostDetail.scss"
 
 const PostDetail = () => {
   const { _id } = useParams();
   const dispatch = useDispatch();
-
   const { post } = useSelector((state) => state.posts);
   const { user } = useSelector(state => state.auth);
 
@@ -25,7 +25,7 @@ const PostDetail = () => {
   if (!post) {
     return <Spin />
   }
-
+ 
   const isAlreadyLiked = post.likes?.includes(user?._id);
 
   const handleLikeDislike = () => {
@@ -49,6 +49,7 @@ const PostDetail = () => {
         ) : (
           <HeartOutlined onClick={handleLikeDislike} />
         )}
+        
       </Card>
     </div>
   );

@@ -1,4 +1,4 @@
-import link from './logo.png'
+import link from './baby.png'
 import "./Logo.scss"
 
 

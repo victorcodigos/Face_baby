@@ -14,8 +14,11 @@ const Profile = () => {
     return <Spin />;
   }
 
+ // const alreadyFollow = user.followers.includes(user._id);
+
   const handleFollowClick = () => {
-    dispatch(follow(user._id));
+      dispatch(follow(user._id));
+   
   };
 
   const handleUnfollowClick = () => {

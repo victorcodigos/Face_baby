@@ -12,6 +12,7 @@ import Search from "./components/Search/Search";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import PrivateZone from "./guards/PrivateZone";
 import Logo from "./components/Logo/Logo";
+import UsersAll from "./components/UsersAll/UsersAll";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<PrivateZone><Profile /> </PrivateZone>} />
+          <Route path="/users" element={<UsersAll />} />
           <Route path="/post/:_id" element={<PostDetail />} />
           <Route path="/search/:title" element={<Search />} />
           <Route path="/*" element={<PageNotFound />} />

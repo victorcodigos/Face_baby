@@ -7,8 +7,7 @@ const Profile = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.users);
 
-  useEffect(() => {
-    
+  useEffect(() => {    
     dispatch(getUserConnected());
   }, []);
 
@@ -24,7 +23,7 @@ const Profile = () => {
         <div>
           <p>Posts:</p>
           {user.postIds.map((postId) => (
-            <div key={postId}>
+            <div key={postId._id}>
               <p>Title: {postId.title}</p>
               <p>Body: {postId.body}</p>
               <img src={"http://localhost:3000/images/" + postId.image} alt="Post-image" srcSet="" style={{ width: 200, height: 200 }}/>

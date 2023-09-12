@@ -63,7 +63,7 @@ export const likePost = createAsyncThunk("posts/like", async (_id) => {
 
   export const createPost = createAsyncThunk("posts/create", async (formData) => {
     try {
-      console.log(formData)
+      
       return await postsService.createPost(formData);
       
     } catch (error) {

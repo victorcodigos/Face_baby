@@ -1,90 +1,119 @@
 @import "../../Colors.scss";
 
 .header {
-    background-color: $primary-color;
-    color: $primary-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
+    padding: 22px;
+    background-color: $primary-color;
+    color: $primary-color;
   }
   
-  .nav {
-    list-style: none;    
-    display: flex;
-    
-  
-    li {
-        
-      margin-right: 20px;
-      font-size: 18px;
-      
-  
-      &:last-child {
-        margin-right: 0;
-      }
-  
-      a {
-        color: white;
-        text-decoration: none;
-        transition: color 0.3s;
-  
-        &:hover {
-          color: $secondary-color;
-        }
-      }
-    }
+  .header a {
+    text-decoration: none;
+    color: $secondary-color;
+    margin-right: 20px;
+    font-size: 19px;
   }
   
   .search-input {
-    input {
-      padding: 5px;
-      
-      border-radius: 4px;
-      font-size: 16px;
-      margin-right: 10px;
-      width: 200px;
-      border-color: $secondary-color;
+    flex-grow: 1;
+    margin-right: 15px;
+    
   
-      &:focus {
-        outline: none;
-        border-color: $hover-color;
-      }
+    input {
+      width: 20%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 19px;
+      background-color:$secondary-color;
+      
     }
   }
   
-  .avatar {
-    background-color: $secondary-color;
-    vertical-align: middle;
-    font-size: 16px;
+  .nav-links {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    margin-right: 10px;
-    overflow: hidden;
-  
-    &:hover {
-      background-color: darken($hover-color, 10%);
-    }
   }
   
   .logout-button {
-    background: none;
+    background-color:$secondary-color;
+    color:$primary-color;
     border: none;
-    color: $secondary-color;
+    border-radius: 5px;
+    padding: 5px 10px;
     cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s;
+    margin-left: 10px;
+  }
   
-    &:hover {
-      color: $secondary-color;
+  .avatar {
+    text-decoration: none;
+    color: $primary-color;
+  
+    .avatar-image {
+      border-radius: 50%;
+      margin-right: 10px;
     }
   }
+  
+ /*@import "../../Colors.scss";
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: $primary-color;
+    color: $primary-color;
+  }
+  
+  .header a {
+    text-decoration: none;
+    color: $primary-color;
+    margin-right: 20px;
+  }
+  
+  .search-input {
+    flex-grow: 1;
+    margin-right: 10px;
+  
+    input {
+      width: 10%;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logout-button {
+    background-color:$secondary-color;
+    color:$primary-color;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .avatar {
+    text-decoration: none;
+    color: $primary-color;
+  
+    .avatar-image {
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+  
+
+
+  ESE ES LO QUE ESTABA ANTES 
+
+  */

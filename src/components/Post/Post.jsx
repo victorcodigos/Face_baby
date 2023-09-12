@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { deletePost } from "../../features/posts/postsSlice";
-import { DeleteOutlined} from  "@ant-design/icons";
-import {Card} from "antd";
+import { DeleteOutlined } from "@ant-design/icons";
+import { Card } from "antd";
 import "./Post.scss"
+
 
 const Post = () => {
   const { posts } = useSelector((state) => state.posts);
@@ -34,8 +35,6 @@ const Post = () => {
       </div>
     );
   });
-
   return <div>{post}</div>;
 };
-
 export default Post;

@@ -1,50 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Profile.scss"
 import { Spin, Card } from "antd";
 import { useSelector, useDispatch } from "react-redux";
-import { BsFillPersonPlusFill, BsFillPersonDashFill } from "react-icons/bs";
-import { follow, unfollow } from "../../features/users/usersSlice";
+import {  getUserConnected} from "../../features/users/usersSlice";
 
 const Profile = () => {
-  const { user } = useSelector((state) => state.auth);
+  const { user  } = useSelector((state) => state.users);
+  
   const dispatch = useDispatch();
 
+
+  useEffect(() => {
+    dispatch(getUserConnected());
+  }, []);
 
   if (!user) {
     return <Spin />;
   }
 
- // const alreadyFollow = user.followers.includes(user._id);
-
-  const handleFollowClick = () => {
-      dispatch(follow(user._id));
-   
-  };
-
-  const handleUnfollowClick = () => {
-    dispatch(unfollow(user._id))
-  };
 
 
   return (
-    <div className="div-main">
-      <Card className="card-profile">
-
-        <p className="username">{user.username}</p>
-        <p className="useremail">{user.email}</p>
-
-
-
-        <button className="button-follow" type="button" onClick={handleFollowClick}><BsFillPersonPlusFill /> Follow</button>
-
-
-
-        <button className="button-unfollow" type="button" onClick={handleUnfollowClick}><BsFillPersonDashFill /> Unfollow</button>
-      </Card>
-
-    </div>
+    <Card title="User Profile" style={{ width: 300 }}>
+      <div>
+        <p>User: {user.username}</p>
+        <p>Email: {user.email}</p>
+        <div>
+          <p>Posts:</p>
+          {user.postIds.map((postId) => (
+            <div key={postId._id}>
+              <p>Title: {postId.title}</p>
+              <p>Body: {postId.body}</p>
+              <img src={"http://localhost:3000/images/" + postId.image} alt="Post-image" srcSet="" style={{ width: 200, height: 200 }} />
+            </div>
+          ))}
+        </div>
+        <div>
+          <p>Followers:</p>
+          {user.followers.map((follower) => (
+            <li key={follower._id}>{follower.username}</li>
+          ))}
+        </div>
+      </div>
+      
+    </Card>
   );
 };
 
 export default Profile;
-

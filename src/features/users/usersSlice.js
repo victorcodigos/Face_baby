@@ -1,11 +1,16 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import usersService from "./usersService";
 
-//const user = JSON.parse(localStorage.getItem("user")) || null;
+
+const user = JSON.parse(localStorage.getItem("user")) || null;
+const token = JSON.parse(localStorage.getItem("token")) || null;
+
 
 const initialState = {
-    users: [],
-    user: null,
+   // users: [],
+    user: user,
+  token:token,
+  isLoading: false, 
 }
 
 export const getAll = createAsyncThunk("users/getallusers", async () => {
@@ -34,16 +39,25 @@ export const unfollow = createAsyncThunk("users/unfollow", async (_id) => {
     }
 })
 
+export const getUserConnected = createAsyncThunk("users/getuserconnected", async () => {
+    try {
+      return await usersService.getUserConnected();
+    } catch (error) {
+      console.error(error);
+      throw error; 
+    }
+  });
+
 export const usersSlice = createSlice({
     name: "users",
     initialState,
     reducers: {
-        resetUsers: (state) => {
+        reset: (state) => {
             state.isError = false;
             state.isSuccess = false;
             state.isLoading = false;
             state.users = [];
-            state.user = null;
+            state.user = {};
         },
     },
     extraReducers: (builder) => {
@@ -72,14 +86,25 @@ export const usersSlice = createSlice({
             })
             state.users = usersUpdates;
         })
-
+        builder.addCase(getUserConnected.pending, (state) => {
+          state.isLoading = null;
+        })
+  
+  
+        builder.addCase(getUserConnected.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.user = action.payload.getUser        ;
+        })
+  
+  
+        builder.addCase(getUserConnected.rejected, (state) => {
+          state.isLoading = false;
+        });
     },
-
 
 
 })
 
-
-export const { resetUsers } = usersSlice.actions;
+export const { reset } = usersSlice.actions;
 
 export default usersSlice.reducer;

@@ -31,11 +31,25 @@ const unfollow = async (_id) => {
 }
 
 
+
+const getUserConnected = async () => {
+    const token = JSON.parse(localStorage.getItem("token"))
+  const res = await axios.get(API_URL + "/users/getuserconnected" ,  {
+    headers: {
+      authorization: token,
+    },
+  });
+  return res.data;
+};
+
 const usersService = {
+    getUserConnected,
     follow,
     unfollow,
     getAll
-
-};
-
-export default usersService;
+    
+    
+    
+  };
+  
+  export default usersService;

@@ -53,7 +53,18 @@ const likePost = async (_id) => {
 
   
 
-  
+  const createPost = async (formData) => {
+    const token = JSON.parse(localStorage.getItem("token"));
+
+    const res = await axios.post(API_URL + "/posts/create/" , formData, {
+        headers: {
+            authorization: token,
+        },
+    });
+    return res.data;
+};
+
+ 
 
   
 
@@ -63,7 +74,8 @@ const postsService = {
   getPostByName,
   deletePost,
   likePost,
-  dislikePost
+  dislikePost, 
+  createPost
   
   
 };

@@ -17,7 +17,7 @@ const Posts = () => {
     if (event.target.image.files[0]) {
       formData.append('image', event.target.image.files[0]);
     }
-    console.log(event.target.title.value)
+    
     formData.append('title', event.target.title.value);
     formData.append('body', event.target.body.value); 
     

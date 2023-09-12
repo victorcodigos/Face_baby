@@ -10,6 +10,7 @@ const Header = () => {
   const { user } = useSelector((state) => state.auth);
   const [text, setText] = useState("");
   const navigate = useNavigate()
+  
   const handleChange = (e) => {
     setText(e.target.value);
     if (e.key === "Enter") {
@@ -20,7 +21,6 @@ const Header = () => {
 
   const dispatch = useDispatch();
 
-
   return (
     <div className="header"> <Link to="/"><HomeOutlined />Home </Link>
       <div className="search-input"> <input onKeyUp={handleChange} placeholder="search a post here 🔎" name="text" /> </div>
@@ -30,6 +30,7 @@ const Header = () => {
             <Link to="/profile" className="avatar"> <Avatar size="medium">
               {user.username}</Avatar>
             </Link>
+            <Link to="/users" className="users"> USERS </Link>
             <button className="logout-button" onClick={() => dispatch(logout())}><LogoutOutlined />Logout</button></div>
         </>
       ) : (

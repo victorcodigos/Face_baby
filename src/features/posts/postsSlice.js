@@ -90,10 +90,10 @@ export const postsSlice = createSlice({
       );
     });
     builder.addCase(likePost.fulfilled, (state, action) => {
-      state.post = action.payload
+      state.post = {...action.payload,commentIds:state.post.commentIds}
     });
     builder.addCase(dislikePost.fulfilled, (state, action) => {
-      state.post = action.payload
+      state.post = {...action.payload,commentIds:state.post.commentIds}
     });
 
 

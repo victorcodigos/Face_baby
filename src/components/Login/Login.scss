@@ -1,4 +1,4 @@
-
+@import "../../Colors.scss";
 .div-main {
       display: flex;
       flex-direction: column;
@@ -22,7 +22,7 @@
         font-size: 16px; 
         border-radius: 15px;
         font-family: 'Lucida Sans';
-        color: white;
+        color: $secondary-color;
       }
   
       .button-login {

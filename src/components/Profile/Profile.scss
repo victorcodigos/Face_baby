@@ -1,3 +1,4 @@
+@import "../../Colors.scss";
 
 .div-father {
     display: flex;
@@ -10,12 +11,12 @@
     .div-card {
               
         max-width: 500px;
-        background-color: white;
+        background-color: $secondary-color;
         font-family: 'Lucida Sans';
         font-size: larger;
-        border: 2px solid black;
+        border: 2px solid $terciary-color;
         border-radius: 25px;
-        box-shadow: 1px 1px 10px white;
+        box-shadow: 1px 1px 10px $secondary-color;
 
     }
 
@@ -24,7 +25,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        border: 1px solid black;
+        border: 1px solid $terciary-color;
         border-radius: 25px;
     }
 

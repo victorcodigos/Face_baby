@@ -39,7 +39,7 @@ const Posts = () => {
 
         <label className="input-content" htmlFor="body">Content</label>
 
-        <textarea className="text-area" id="body"name="body"cols="25"rows="10"></textarea>
+        <textarea className="text-area" id="body"name="body"cols="1"rows="10"></textarea>
 
         <button className="button-sent" type="submit">Submit</button>
 

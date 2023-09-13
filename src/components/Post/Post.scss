@@ -11,7 +11,7 @@
         width: 530px; 
         height: 530px;
         font-size: 2px; 
-        background-color: #93CFE4;
+        background-color: $secondary-color;
         border-color: black;
     }
 
@@ -20,4 +20,7 @@
         max-height: 400px; 
       }
     
+}
+.user{
+    font-size: 20px;
 }

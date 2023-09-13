@@ -23,7 +23,7 @@ export const getAll = createAsyncThunk("users/getallusers", async () => {
 
 export const follow = createAsyncThunk("users/follow", async (_id) => {
     try {
-        //console.log(_id)
+        
         return await usersService.follow(_id);
     } catch (error) {
         console.error(error)
@@ -32,7 +32,7 @@ export const follow = createAsyncThunk("users/follow", async (_id) => {
 
 export const unfollow = createAsyncThunk("users/unfollow", async (_id) => {
     try {
-        //console.log(_id)
+        
         return await usersService.unfollow(_id);
     } catch (error) {
         console.error(error)

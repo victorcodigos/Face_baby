@@ -24,3 +24,12 @@
 .user{
     font-size: 20px;
 }
+
+span.user{
+    cursor: pointer;
+}
+
+span.user:hover{
+    color:$hover-color
+
+}

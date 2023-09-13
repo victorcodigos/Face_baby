@@ -3,18 +3,25 @@ import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-import "./Header.scss"
-import { HomeOutlined, LogoutOutlined, LoginOutlined, UserAddOutlined, UserOutlined, ProfileOutlined } from "@ant-design/icons"
+import "./Header.scss";
+import {
+  HomeOutlined,
+  LogoutOutlined,
+  LoginOutlined,
+  UserAddOutlined,
+  UserOutlined,
+  ProfileOutlined,
+} from "@ant-design/icons";
 
 const Header = () => {
   const { user } = useSelector((state) => state.auth);
   const [text, setText] = useState("");
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setText(e.target.value);
-    if (e.key === "Enter") {      
-      navigate("/search/" + text)
+    if (e.key === "Enter") {
+      navigate("/search/" + text);
     }
   };
 
@@ -26,14 +33,21 @@ const Header = () => {
         <HomeOutlined /> Home
       </Link>
       <div className="search-input">
-        <input onKeyUp={handleChange} placeholder="search a post here 🔎" name="text" />
+        <input
+          onKeyUp={handleChange}
+          placeholder="search a post here 🔎"
+          name="text"
+        />
       </div>
       {user ? (
         <div className="nav-links">
-          <Link to="/profile" className="avatar">            
-          <ProfileOutlined /> Profile         
+          <Link to="/profile" className="avatar">
+            <ProfileOutlined /> Profile
           </Link>
-          <Link to="/users" className="users"><UserOutlined />Users</Link>
+          <Link to="/users" className="users">
+            <UserOutlined />
+            Users
+          </Link>
           <button
             className="logout-button"
             onClick={() => {
@@ -56,7 +70,6 @@ const Header = () => {
       )}
     </div>
   );
-  
 };
 
 export default Header;

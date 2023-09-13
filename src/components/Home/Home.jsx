@@ -1,7 +1,6 @@
 import React from "react";
 import Posts from "../Posts/Posts";
-import "./Home.scss"
-
+import "./Home.scss";
 
 const Home = () => {
   return (

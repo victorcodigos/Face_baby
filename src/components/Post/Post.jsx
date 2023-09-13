@@ -5,7 +5,7 @@ import { deletePost } from "../../features/posts/postsSlice";
 import { DeleteOutlined } from "@ant-design/icons";
 import { Card } from "antd";
 import "./Post.scss";
-import {  HeartOutlined } from "@ant-design/icons"
+import { HeartOutlined } from "@ant-design/icons";
 
 const Post = () => {
   const { posts } = useSelector((state) => state.posts);
@@ -22,15 +22,20 @@ const Post = () => {
         <div className="div-post">
           <Card className="div-card" title={post.title}>
             <Link to={"/post/" + post._id}>
-              
               <img className="img" src={image} alt="post image" />{" "}
             </Link>
             <p className="user">Posted by: {post.userId.username}</p>
-            <p className="user"><HeartOutlined/> {post.likes.length}</p>
+            <p className="user">
+              <HeartOutlined /> {post.likes.length}
+            </p>
 
             {post.userId?._id === user?._id ? (
-              <span className="user" onClick={() => dispatch(deletePost(post._id))}><DeleteOutlined />Delete
-                
+              <span
+                className="user"
+                onClick={() => dispatch(deletePost(post._id))}
+              >
+                <DeleteOutlined />
+                Delete
               </span>
             ) : null}
           </Card>

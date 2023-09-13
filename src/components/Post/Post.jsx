@@ -29,8 +29,8 @@ const Post = () => {
             <p className="user"><HeartOutlined/> {post.likes.length}</p>
 
             {post.userId?._id === user?._id ? (
-              <span className="user" onClick={() => dispatch(deletePost(post._id))}>Delete
-                <DeleteOutlined />
+              <span className="user" onClick={() => dispatch(deletePost(post._id))}><DeleteOutlined />Delete
+                
               </span>
             ) : null}
           </Card>

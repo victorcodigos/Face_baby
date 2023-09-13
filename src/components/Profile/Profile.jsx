@@ -22,12 +22,17 @@ const Profile = () => {
 
   return (
     <div className="div-father">
-    <Card className="div-card" title="User Profile" style={{ width: 300 }}>
+    <div className="div-card" title="User Profile" >
       <div className="div-container">
         <p className="name-user">User: {user.username}</p>
         <p className="email-user">Email: {user.email}</p>
-        <div className="div-posts"> 
-          <p className="p-posts">Posts:</p>
+        <div className="followers">
+          <p>Followers:</p>
+          {user.followers.map((follower) => (
+            <li key={follower._id}>{follower.username}</li>
+          ))}
+        </div>
+        <div className="div-posts">           
           {user.postIds.map((postId) => (
             <div className="id-posts" key={postId._id}>
               <p className="title">Title: {postId.title}</p>
@@ -36,15 +41,10 @@ const Profile = () => {
             </div>
           ))}
         </div>
-        <div>
-          <p className="followers">Followers:</p>
-          {user.followers.map((follower) => (
-            <li key={follower._id}>{follower.username}</li>
-          ))}
-        </div>
+        
       </div>
       
-    </Card>
+    </div>
     </div>
   );
 };

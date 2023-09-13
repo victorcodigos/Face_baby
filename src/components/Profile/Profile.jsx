@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Profile.scss"
-import { Spin, Card } from "antd";
+import { Spin } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import {  getUserConnected} from "../../features/users/usersSlice";
 

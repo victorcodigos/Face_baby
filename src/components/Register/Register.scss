@@ -1,4 +1,4 @@
-@import "../../Colors.scss";
+
 
 .div-main {
   display: flex;
@@ -26,8 +26,8 @@
     font-size: 16px;
     border-radius: 15px;
     font-family: 'Lucida Sans';
-    background-color: $secondary-color;
-    color: $terciary-color;
+    background-color: white;
+    color: black;
   }
 
   .btn-submit {
@@ -40,9 +40,8 @@
   }
 
   .btn-submit:hover {
-    background-color: $hover-color;
+    background-color: #66a7be;
     cursor: pointer;
   }
-
 
 }

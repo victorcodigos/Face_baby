@@ -1,4 +1,4 @@
-@import "../../Colors.scss";
+//@import "../../Colors.scss";
 .div-main {
     display: flex;
     flex-wrap: wrap; 
@@ -11,7 +11,7 @@
         padding: 25px; 
         text-align: center; 
         box-sizing: border-box;
-        background-color: $secondary-color;
+        background-color: white;
       }
       .user{
         

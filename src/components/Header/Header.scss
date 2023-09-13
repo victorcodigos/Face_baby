@@ -1,12 +1,10 @@
-@import "../../Colors.scss";
-
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    background-color: $secondary-color;
-    color: $secondary-color;
+    background-color:white;
+    color:white;
     padding: 2%;
     margin-bottom: 10%;
     margin-top: -30px;
@@ -20,7 +18,7 @@
     font-size: 23px;
     font-family: 'Lucida Sans';
     border-radius: 15px;
-    background-color:$secondary-color;
+    background-color:white;
   }
   
   .search-input {
@@ -36,14 +34,14 @@
       border: none;
       border-radius: 5px;
       font-size: 15px;
-      background-color:$primary-color;
+      background-color:#93CFE4;
       border-radius: 19px;
       
     }
   }
 
   .users{
-    background-color:$secondary-color;
+    background-color:white;
     color: black;
     border: none;
     border-radius: 2px;
@@ -60,26 +58,26 @@
     align-items: center;
   }
   .nav-links a:hover {
-    color: $hover-color;
+    color: #66a7be;
 
   }
   a:hover {
-    color: $hover-color;
+    color: #66a7be;
   }
 
   button.logout-button{
-    border: 1px solid $terciary-color;
+    border: 1px solid black;
 
   }
 
   button.logout-button:hover{
-    border: 1px solid $hover-color;
-    color: $hover-color
+    border: 1px solid #66a7be;
+    color: #66a7be;
 
   }
   
   .logout-button {
-    background-color:$secondary-color;
+    background-color:white;
     color: black;
     border: none;
     border-radius: 5px;

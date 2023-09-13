@@ -1,4 +1,4 @@
-@import "../../Colors.scss";
+
 
 .FooterContainer{
     margin-top: 17%;
@@ -28,7 +28,7 @@
             }
             a:hover {
                 opacity: 1;
-                color: $hover-color;
+                color:#66a7be;
                 
             }
         }
@@ -50,15 +50,15 @@
             display: inline-block;
             text-align: center;
             border-radius: 50%;
-            border: 2px solid $terciary-color;
+            border: 2px solid black;
             margin: 0 9px;
-            color: $terciary-color;
+            color: black;
             opacity: 0.75;
         }
         .social>a:hover {
             opacity: 0.9;
-            color: $hover-color;
-            border: 2px solid  $hover-color;
+            color: #66a7be;
+            border: 2px solid  #66a7be;
             
         }
         .copyright {

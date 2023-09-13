@@ -14,8 +14,8 @@ const Footer = () => {
                         <a href=""><Icon icon="ion:logo-linkedin" /></a>
                         <a href=""><Icon icon="ion:logo-github" /></a></div>
                     <ul className="list-inline">
-                        <li className="list-inline-item"><a href="">Home</a></li>
-                        <li className="list-inline-item"><a href="">About</a></li>
+                        <li className="list-inline-item"><a href="http://localhost:5173/">Home</a></li>
+                        <li className="list-inline-item"><a href="http://localhost:5173/aboutus">About</a></li>
                         <li className="list-inline-item"><a href="">Contact</a></li>
                     </ul>
                     <p className="copyright"> Created by Adrian Pastor and Victor Macedo. Copyright © 2023 . All rights reserved.</p>

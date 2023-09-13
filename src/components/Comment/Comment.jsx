@@ -24,7 +24,7 @@ const Comment = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (title === "" || body === "") {
+      if (title === "" ) {
         throw new ErrorList("Please fill in all fields.");
       }
 
@@ -47,19 +47,12 @@ const Comment = () => {
           <input
             type="text"
             name="title"
-            placeholder="Title"
+            placeholder="Comment"
             onChange={onChange}
             value={title}
           />
         </div>
-        <div className="comment-body-container">
-          <textarea
-            name="body"
-            placeholder="Comment"
-            onChange={onChange}
-            value={body}
-          />
-        </div>
+        
         <button type="submit" style={{ marginTop: "16px" }}>
           Submit
         </button>

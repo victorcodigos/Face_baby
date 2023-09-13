@@ -50,4 +50,20 @@
 
     }
 
+    .button-sent:hover {
+        background-color: $hover-color;
+    }
+
+    .text-area {
+        resize: none;
+    }
+
+   label.label-image{
+    font-size: 18px;
+   }
+
+   label.input-title{
+    font-size: 18px;
+   }
+
 }

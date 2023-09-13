@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { Avatar } from "antd";
+
 import "./Header.scss"
-import { HomeOutlined, LogoutOutlined, LoginOutlined, UserAddOutlined, SearchOutlined, TeamOutlined} from "@ant-design/icons"
+import { HomeOutlined, LogoutOutlined, LoginOutlined, UserAddOutlined, UserOutlined, ProfileOutlined } from "@ant-design/icons"
 
 const Header = () => {
   const { user } = useSelector((state) => state.auth);
@@ -30,12 +30,10 @@ const Header = () => {
       </div>
       {user ? (
         <div className="nav-links">
-          <Link to="/profile" className="avatar">
-            <Avatar size="medium">
-              {user.username}
-            </Avatar>
+          <Link to="/profile" className="avatar">            
+          <ProfileOutlined /> Profile         
           </Link>
-          <Link to="/users" className="users">USERS</Link>
+          <Link to="/users" className="users"><UserOutlined />Users</Link>
           <button
             className="logout-button"
             onClick={() => {
@@ -43,7 +41,7 @@ const Header = () => {
               navigate("/");
             }}
           >
-            <LogoutOutlined /> Logout
+            <LogoutOutlined /> LogOut
           </button>
         </div>
       ) : (

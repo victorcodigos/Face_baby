@@ -1,10 +1,14 @@
 import React from "react";
 import Posts from "../Posts/Posts";
+import "./Home.scss"
+
+
 const Home = () => {
   return (
-    <div style={{height:"150vh"}}>
-      Home
-      <Posts />
+    <div className="div-main">
+      <div className="div-posts">
+        <Posts />
+      </div>
     </div>
   );
 };

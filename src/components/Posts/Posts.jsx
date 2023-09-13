@@ -27,31 +27,25 @@ const Posts = () => {
   
 
   return (
-    <div>
+    <div className="form">
+
       <form onSubmit={onSubmit}>
-        <label htmlFor="title">Title</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-        />
-        <label htmlFor="body">Content</label>
-        <textarea
-          id="body"
-          name="body"
-          cols="10"
-          rows="5"
-        ></textarea>
-        <label htmlFor="image">Image</label>
-        <input
-          type="file"
-          accept="image/*"          
-          id="image"
-          name="image"
-        />
-        <button type="submit">Submit</button>
+
+        <label className="input-title" htmlFor="title">Title</label><input type="text" id="title" name="title" />
+        
+        <label className="label-image" htmlFor="image">Image</label>
+
+        <input className="input-file" type="file"accept="image/*" id="image"name="image"/>
+
+        <label className="input-content" htmlFor="body">Content</label>
+
+        <textarea className="text-area" id="body"name="body"cols="25"rows="10"></textarea>
+
+        <button className="button-sent" type="submit">Submit</button>
+
       </form>
-      <Post />
+
+      < Post className="posts" />
     </div>
   );
 };

@@ -1,4 +1,10 @@
-@import "Colors.scss";
+html, body {
+  height: 100%;
+  margin: 0; 
+  padding: 0; 
+}
+
+//@import "Colors.scss";
 
 /*.div-main {
   display: flex;
@@ -18,7 +24,7 @@
 }*/
 
 // creo que podemos eliminar el index.scss pues no creo que vamos necesitar
-a {
+/*a {
   font-weight: 500;
   color: $terciary-color;
   text-decoration: inherit;
@@ -58,4 +64,4 @@ button:focus-visible {
   button {
     background-color: $terciary-color;
   }
-}
+}*/

@@ -48,7 +48,7 @@ const Comment = () => {
     };
     return (
         <>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} >
                 <div className="comment-title-container">
                     <input
                         type="text"

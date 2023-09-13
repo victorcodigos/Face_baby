@@ -1,15 +1,48 @@
-.div-main {
-
+.div-father {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 
-    .card-profile {
-        
-        width: 80%; 
-        max-width: 400px; 
+    .div-card {
+        width: 90%;
+        max-width: 400px;
+        background-color: rgb(235, 178, 235);
+        font-family: 'Lucida Sans';
+        font-size: larger;
+
+    }
+
+    .div-container {
         padding: 20px;
+    }
 
+    .name-user,
+    .email-user,
+    .followers {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    .p-posts {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .id-posts {
+        margin-top: 20px;
+    }
+
+    .title,
+    .body {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .img {
+        width: 100%;
+        max-height: 200px;
     }
 }

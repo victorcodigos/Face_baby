@@ -1,22 +1,16 @@
-@import "Colors.scss";
+//@import "Colors.scss";
 
 #root {
-  margin: 0;
+  
   text-align: center;
-  //background-color: $secondary-color;  
-  background-color: rgb(162, 218, 242);
-  height: 100%; 
+  background-color: #93CFE4;
+  
 }
 
 body {
   
-  height: 100vh; /* 100% da altura do viewport */
-  width: 100%; /* 100% do viewport */
+  height: 100%; 
+ 
 }
 
-.App {
-
-  height: 100%;
-  
-} 
 

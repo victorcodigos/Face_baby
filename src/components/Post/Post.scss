@@ -1,10 +1,23 @@
 @import "../../Colors.scss";
 
-.Post-container{
+.div-main{
+
     display:flex;
     justify-content: center;
-    margin: 5vh;
     flex-direction: row;
+    margin-bottom: 80px;
     
+    .div-card {
+        width: 530px; 
+        height: 530px;
+        font-size: 2px; 
+        background-color: #93CFE4;
+        border-color: black;
+    }
+
+    .img {
+        width: 100%; 
+        max-height: 400px; 
+      }
     
 }

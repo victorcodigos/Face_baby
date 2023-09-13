@@ -55,21 +55,11 @@ const Register = () => {
   return (
     <div className="div-main">
     <form className="form" onSubmit={onSubmit}>
-      <input className="username-input" type="text" name="username" value={username} onChange={onChange} />
-      <input className="email-input" type="email" name="email" value={email} onChange={onChange} />
-      <input className="password-input"
-        type="password"
-        name="password"
-        value={password}
-        onChange={onChange}
-      />
-      <input className="repeat-password"
-        type="password"
-        name="password2"
-        value={password2}
-        onChange={onChange}
-      />
-      <button type="submit">Register</button>
+      <input className="input-username" type="text" name="username" placeholder="Insert your username here" value={username} onChange={onChange} />
+      <input className="input-email" type="email" name="email" placeholder="Insert your username email here" value={email} onChange={onChange} />
+      <input className="input-password"type="password"  name="password" placeholder="Insert your password here" value={password} onChange={onChange}/>
+      <input className="repeat-password" type="password"name="password2" placeholder="Repeat your password please" value={password2}onChange={onChange}/>
+      <button className="btn-submit" type="submit">Register</button>
     </form>
     </div>
   );

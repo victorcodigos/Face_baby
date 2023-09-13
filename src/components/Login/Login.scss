@@ -1,14 +1,45 @@
 .div-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .form {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      margin-top: 1px;
       
-    }
+      
+      .form {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+      }
+      .input-email,
+      .input-password {
+        width: 300px; 
+        padding: 10px; 
+        margin: 5px; 
+        font-size: 16px; 
+        border-radius: 15px;
+        font-family: 'Lucida Sans';
+      }
+  
+      .button-login {
+        width: 320px; 
+        padding: 10px;
+        font-size: 16px; 
+        border-radius: 15px;
+        background-color: rgb(227, 162, 227);
+        font-family: 'Lucida Sans';
+      }
+      
+  
   }
+
+
+
+
+
+
+ 
+ 
   

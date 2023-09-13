@@ -4,7 +4,7 @@ import { logout } from "../../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Avatar } from "antd";
 import "./Header.scss"
-import { HomeOutlined, LogoutOutlined, LoginOutlined, UserAddOutlined, SearchOutlined} from "@ant-design/icons"
+import { HomeOutlined, LogoutOutlined, LoginOutlined, UserAddOutlined, SearchOutlined, TeamOutlined} from "@ant-design/icons"
 
 const Header = () => {
   const { user } = useSelector((state) => state.auth);
@@ -30,8 +30,8 @@ const Header = () => {
             <Link to="/profile" className="avatar"> <Avatar size="medium">
               {user.username}</Avatar>
             </Link>
-            <Link to="/users" className="users"> USERS </Link>
-            <button className="logout-button" onClick={() => dispatch(logout())}><LogoutOutlined />Logout</button></div>
+            <Link to="/users" className="users" ><TeamOutlined /> Users </Link>
+            <button className="logout-button" onClick={() => dispatch(logout())}><LogoutOutlined />LogOut</button></div>
         </>
       ) : (
         <>

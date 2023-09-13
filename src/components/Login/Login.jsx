@@ -46,11 +46,12 @@ const Login = () => {
   return (
     <div className="div-main">
     <form className="form" onSubmit={onSubmit}>
-      <input className="input-email" type="email" name="email" value={email} onChange={onChange} />
-      <input className="input-password" type="password" name="password" value={password} onChange={onChange} />
+      <input className="input-email" type="email" name="email" placeholder="Insert your email here" value={email} onChange={onChange} />
+      <input className="input-password" type="password" name="password" placeholder="Insert your password here"  value={password} onChange={onChange} />
       <button className="button-login" type="submit">Login</button>
     </form>
     </div>
+    
   );
 };
 export default Login;

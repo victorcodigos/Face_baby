@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { BsFillPersonPlusFill, BsFillPersonDashFill } from "react-icons/bs";
 import { Card } from "antd";
 import { follow, unfollow } from "../../features/users/usersSlice";
-//import { useParams } from "react-router-dom";
+import "./UsersAll.scss"
 
 const UsersAll = () => {
-    //const {_id} = useParams();
+    
     const dispatch = useDispatch();
     const { users } = useSelector(state => state.users)
 
@@ -29,26 +29,21 @@ const UsersAll = () => {
         dispatch(unfollow(_id))
     };
 
-
-    
-
     return (
         <>
-            <div >
+            <div className="div-main">
             {users && users.map((u) => {
                 const isAlreadyFollowed = u.followers.includes(user._id)
                 console.log(user._id)
                 return(
                     <div key={u._id}>
-                        <Card>
-                            <span>{u?.username}</span>
-                            {isAlreadyFollowed ? <button className="button-unfollow" type="button" onClick={()=>handleUnfollowClick(u._id)}>
+                        <Card className="card">
+                            <p className="user">{u?.username}</p>
+                            {isAlreadyFollowed ? <button className="button-" type="button" style={{ backgroundColor: '#93CFE4' }} onClick={()=>handleUnfollowClick(u._id)}>
                                 <BsFillPersonDashFill /> Unfollow
-                            </button>:   <button className="button-follow" type="button" onClick={()=>handleFollowClick(u._id)}>
+                            </button>:   <button className="button-" type="button" style={{ backgroundColor: '#93CFE4' }} onClick={()=>handleFollowClick(u._id)}>
                                 <BsFillPersonPlusFill /> Follow
-                            </button> } 
-                         
-                            
+                            </button> }   
                         </Card>
                     </div>
                 )})}

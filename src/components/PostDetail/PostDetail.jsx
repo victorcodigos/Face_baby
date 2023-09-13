@@ -16,7 +16,7 @@ const PostDetail = () => {
   const { _id } = useParams();
   const { post } = useSelector((state) => state.posts);
   const { user } = useSelector(state => state.auth);
-  
+
 
   useEffect(() => {
     dispatch(getById(_id));
@@ -26,7 +26,7 @@ const PostDetail = () => {
   if (!post) {
     return <Spin />
   }
- 
+
   const isAlreadyLiked = post.likes?.includes(user?._id);
 
   const handleLikeDislike = () => {
@@ -36,35 +36,38 @@ const PostDetail = () => {
       dispatch(likePost(post._id));
     }
   };
-   
-  
-  
-  const image = post.image?.includes("https://") ? post.image :"http://localhost:3000/images/"+post.image
+
+
+
+  const image = post.image?.includes("https://") ? post.image : "http://localhost:3000/images/" + post.image
   return (
-    <div className="Detail">
+
+
+    <div className="detail">
+      <Card className="div-card" title={post.title} style={{ backgroundColor: "#93CFE4"}}>
+        <img className="img" src={image} alt="post image"/>
+        <p className="title-post">{post.body}</p>
+
         
-        <Card title= {post.title} bordered={false} style={{ width: 300, objectFit: "cover"  }}>
-        <img src={image} alt="post image" style={{ width: 200, height: 200 }} />
-        <p>{post.body}</p>
         <span className="likes"> {post.likes?.length}</span>
         {isAlreadyLiked ? (
-          <HeartFilled onClick={handleLikeDislike} />
+          <HeartFilled className="red-heart" onClick={handleLikeDislike} />
         ) : (
-          <HeartOutlined onClick={handleLikeDislike} />
+          <HeartOutlined className="red-heart" onClick={handleLikeDislike} />
         )}
         <p>
-          <Comment/>
+          <Comment className="comments"/>
           {
-        post.commentIds?.map(post =>{
-          return (
-            <div>
-              {post.title}
-            </div>
-          )
-        })
+            post.commentIds?.map(post => {
+              return (
+                <div className="posts">
+                  {post.title}
+                </div>
+              )
+            })
 
-      }</p>
-      
+          }</p>
+
       </Card>
     </div>
   );

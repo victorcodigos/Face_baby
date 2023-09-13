@@ -4,87 +4,54 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 22px;
-    background-color: $primary-color;
+    padding: 0px;
+    background-color: #93CFE4;
     color: $primary-color;
+    margin-top: 1%;
+    margin-bottom: 10%;
+    margin-top: -50px;
+    
   }
   
   .header a {
     text-decoration: none;
-    color: $secondary-color;
-    margin-right: 20px;
-    font-size: 19px;
+    color: black;
+    margin-left: 20px;
+    font-size: 27px;
+    font-family: 'Lucida Sans';
+    border-radius: 15px;
+    background-color:$secondary-color;
   }
   
   .search-input {
-    flex-grow: 1;
-    margin-right: 15px;
+    flex-grow: 10;
+    align-items: center;
+    margin-left: 100px;
     
   
     input {
-      width: 20%;
-      padding: 10px;
+      width: 59%;
+      padding: 15px;
       border: none;
       border-radius: 5px;
-      font-size: 19px;
+      font-size: 15px;
       background-color:$secondary-color;
+      border-radius: 19px;
       
     }
   }
-  
-  .nav-links {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logout-button {
+
+  .users{
     background-color:$secondary-color;
-    color:$primary-color;
+    color: black;
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 5px 10px;
     cursor: pointer;
     margin-left: 10px;
-  }
-  
-  .avatar {
-    text-decoration: none;
-    color: $primary-color;
-  
-    .avatar-image {
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-  }
-  
- /*@import "../../Colors.scss";
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: $primary-color;
-    color: $primary-color;
-  }
-  
-  .header a {
-    text-decoration: none;
-    color: $primary-color;
-    margin-right: 20px;
-  }
-  
-  .search-input {
-    flex-grow: 1;
-    margin-right: 10px;
-  
-    input {
-      width: 10%;
-      padding: 5px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-    }
+    font-family: 'Lucida Sans';
+    border-radius: 15px;
+    
   }
   
   .nav-links {
@@ -94,26 +61,28 @@
   
   .logout-button {
     background-color:$secondary-color;
-    color:$primary-color;
+    color: black;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
     margin-left: 10px;
+    font-family: 'Lucida Sans';
+    font-size: 28px;
+    border-radius: 15px;
   }
   
   .avatar {
     text-decoration: none;
-    color: $primary-color;
+    color: black;
   
     .avatar-image {
-      border-radius: 50%;
-      margin-right: 10px;
+      border-radius: 60%;
+      margin-right: 15px;
     }
+
+
+  
   }
   
-
-
-  ESE ES LO QUE ESTABA ANTES 
-
-  */
+ 

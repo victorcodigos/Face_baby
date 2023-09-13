@@ -1,0 +1,19 @@
+.div-main {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    margin: 0 -11px; 
+
+    .card {
+        
+        margin: 10px; 
+        padding: 25px; 
+        text-align: center; 
+        box-sizing: border-box;
+        background-color: rgba(227, 162, 227, 0.826);
+      }
+      .user{
+        
+        font-family: 'Lucida Sans';
+      }
+  }

@@ -1,8 +1,20 @@
-@import "../../Colors.scss";
-
-.Detail{
-    display:flex;
+.Detail {
+    display: flex;
     justify-content: center;
-    margin-bottom: 8vh;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     
+
+    .div-card {
+        text-align: center;
+        padding: 20px;
+        
+    }
+
+    .posts {
+        margin-top: 10px;
+    }
+
 }
